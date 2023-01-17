@@ -1,9 +1,9 @@
-Feature: Test the attributes of a given element
+Feature: Test
     As a developer
     I want to be able to test the attributes of a given element
 
     Background:
-        Given I open the site "/"
+        Given the user is on home page
 
-    Scenario: The attribute "role" of a element should be "note"
-        When the user clicks on '[href="/watchlist/"]'
+    Scenario: test
+        When the user selects '20' rows

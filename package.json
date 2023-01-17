@@ -5,7 +5,6 @@
   "main": "wdio.conf.js",
   "scripts": {
     "test": "wdio wdio.conf.js",
-    "wdio": "wdio run ./wdio.conf.js",
     "generate:report": "allure generate reports/allure-results/",
     "open:report": "allure open"
   },
