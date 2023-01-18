@@ -10,14 +10,22 @@ class HomePage extends BasePage {
     return $$('table > tbody > tr');
   }
   async selectShowRow(value) {
-    await this.showRowsDropDown.click();
-    await browser.$(`//*[text()=${value}]`).click();
+    if (value === '20' || value === '50' || value === '100') {
+      await this.showRowsDropDown.click();
+      await browser.$(`//*[text()=${value}]`).click();
+    } else {
+      throw new Error('Invalid value, Please select from [20,50,100]');
+    }
   }
 
   async rowCount(value) {
-    const count = await this.tableRows.length;
-    await browser.pause(600);
-    expect(count).toHaveText(value);
+    if (value === '20' || value === '50' || value === '100') {
+      const count = await this.tableRows.length;
+      await browser.pause(600);
+      expect(count).toHaveText(value);
+    } else {
+      throw new Error('Invalid value, Please select from [20,50,100]');
+    }
   }
 
   open() {
